@@ -11,7 +11,6 @@ button.addEventListener('click', (e) => {
     let roundValue = round.value;
     if(seasonValue !== '' && roundValue !== '') {
         getDriver(seasonValue, roundValue).then(drivers => createTable(drivers));
-        document.getElementsByTagName('h1')[0].innerHTML = `Formula 1 ${seasonValue} - Round ${roundValue}`;
     }else {
         alert('Invalid fields');
     }

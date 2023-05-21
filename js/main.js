@@ -1,16 +1,15 @@
 console.log('main.js loaded');
-const audio = new Audio('https://www.televisiontunes.com/uploads/audio/Formula%201%20-%20Brian%20Tyler.mp3');
 const form = document.getElementById('form');
 const button = document.getElementById('button');
 const season = document.getElementById('season');
 const round = document.getElementById('round');
+
 
 button.addEventListener('click', (e) => {
     e.preventDefault();
     let seasonValue = season.value;
     let roundValue = round.value;
     if(seasonValue !== '' && roundValue !== '') {
-        audio.play();
         getDriver(seasonValue, roundValue).then(drivers => createTable(drivers));
         document.getElementsByTagName('h1')[0].innerHTML = `Formula 1 ${seasonValue} - Round ${roundValue}`;
     }else {
